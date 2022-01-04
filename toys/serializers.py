@@ -21,3 +21,13 @@ class ToysSerializer(serializers.Serializer):
         instance.was_included_in_home = validated_data.get("was_included_in_home", instance.was_included_in_home)
         instance.save()
         return instance
+
+
+"""
+We are using rest_framework.serializer.Serializer as the super class. Herein we declare
+attributes that are manually mapped to the appropriate types, and override
+the create and update methods.
+
+So data is validated using the conditions mentioned in the attributes. In case the data is valid, only then can 
+it be used for the create & update methods.
+"""
